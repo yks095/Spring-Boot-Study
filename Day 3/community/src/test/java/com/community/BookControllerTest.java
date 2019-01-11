@@ -35,13 +35,23 @@ public class BookControllerTest {
     @Test
     public void Book_MVC_테스트() throws Exception {
         Book book = new Book("Spring Boot Book", LocalDateTime.now());
+        Integer a = new Integer(1);
         given(bookService.getBookList()).willReturn(Collections.singletonList(book));
+        given(bookService.getInteger()).willReturn(Collections.singletonList(a));
+
 
         mvc.perform(get("/books"))
                 .andExpect(status().isOk())
+                .andExpect(view().name("book")) //뷰 이름이 book인지?
+                .andExpect(model().attributeExists("bookList")) // 모델의 bookList가 존재하는지?
+                .andExpect(model().attribute("bookList", contains(book)));  // 프로퍼티가 Book의 객체를 포함하는지
+
+        mvc.perform(get("/books2"))
+                .andExpect(status().isOk())
                 .andExpect(view().name("book"))
-                .andExpect(model().attributeExists("bookList"))
-                .andExpect(model().attribute("bookList", contains(book)));
+                .andExpect(model().attributeExists("bookList3"))
+                .andExpect(model().attribute("bookList3", contains(a)));
+
     }
 
 
