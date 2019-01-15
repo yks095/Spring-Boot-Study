@@ -173,4 +173,28 @@
  - JSON 테스트는 크게 두가지로 나뉨
       1) 문자열로 나열된 JSON 데이터를 객체로 변환하여 변환된 객체값을 테스트
       2) 1번의 반대
- - JacksonTester 객체는 객체 변환과 관련된 다양한 API를 제공 
+ - JacksonTester 객체는 객체 변환과 관련된 다양한 API를 제공
+
+### [MVC 패턴]()
+
+### [타임리프(Tymeleaf)]()
+
+### [템플릿](), [템플릿 엔진]()
+
+### [의존 라이브러리]()
+ - Web
+ - 타임리프
+ - JPA
+ - Devtools
+ - 롬복
+ - H2
+
+### [각종 어노테이션 모음]()
+ - Serializable
+ - @Getter
+ - @NoArgsConstructor
+ - @Entity
+ - @Table
+ - @Id
+ - @Column
+ - @Builder
