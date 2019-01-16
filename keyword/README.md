@@ -186,15 +186,15 @@
  - 타임리프
  - JPA
  - Devtools
- - 롬복
+ - Lombok
  - H2
 
-### [각종 어노테이션 모음]()
- - Serializable
+### [각종 어노테이션 모음](https://github.com/etg6550/2019WinterProject/tree/master/Day4/HomeWork)
  - @Getter
+ - @Id
  - @NoArgsConstructor
  - @Entity
- - @Table
- - @Id
  - @Column
  - @Builder
+ - Serializable(직렬화)
+ - @Table
