@@ -175,13 +175,11 @@
       2) 1번의 반대
  - JacksonTester 객체는 객체 변환과 관련된 다양한 API를 제공
 
-### [MVC 패턴]()
+### [MVC 패턴](https://github.com/ber01/Study-Spring-Boot/tree/master/keyword/MVC)
 
-### [타임리프(Tymeleaf)]()
+### [타임리프(Tymeleaf), 템플릿, 템플릿 엔진](https://github.com/rhkd4560/Study-SpringBoot/tree/master/Spring%204day/homework)
 
-### [템플릿](), [템플릿 엔진]()
-
-### [의존 라이브러리]()
+### [의존 라이브러리](https://github.com/dongh9508/Study-SpringBoot2/tree/master/keyword/LINK/dependency%20library)
  - Web
  - 타임리프
  - JPA
@@ -198,3 +196,37 @@
  - @Builder
  - Serializable(직렬화)
  - @Table
+
+### [각종 어노테이션 모음2](https://github.com/ber01/Study-Spring-Boot/tree/master/keyword/Annotation2)
+
+### [스프링 부트 시큐리티, OAuth2](https://github.com/etg6550/2019WinterProject/tree/master/Day6)
+ - 스프링 부트 시큐리티란?
+ - OAuth2 인증 수행 방법
+ - 권한 부여 코드 승인타입
+
+### [각종 어노테이션 모음3](https://github.com/pdh6547/study-spring-boot/blob/master/Keyword/Homework/Annotaion%20and%20Interface.md)
+ - @NestedConfigurationProperty
+ - AuthorizationCodeResourceDetails
+ - ResourceServerProperties
+ - OAuth2 리소스 값
+ - @Configuration
+ - 동기, 비동기 통신
+
+### [각종 어노테이션 모음4](https://github.com/hagome0/Study-Spring-Boot/tree/master/keyword/Annotaion%20and%20Interface2)
+ - @EnableWebSecurity
+ - WebSecurityConfigurerAdapter
+ - HttpServletRequest
+ - XFrameOptionsHeaderWriter
+ - CharacterEncodingFilter
+ - CsrfFilter
+
+### [각종 어노테이션 모음5](https://github.com/woghd9072/study-spring-boot/tree/master/Keyword/Homework)
+ - @EnableOAuth2Client
+ - OAuth2ClientContext
+ - BasicAuthenticationFilter
+ - FilterRegistrationBean
+ - Filter
+ - CompositeFilter
+ - OAuth2ClientAuthenticationProcessingFilter
+ - OAuth2RestTemplate
+ - UserInfoTokenService
