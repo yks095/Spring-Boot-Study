@@ -23,6 +23,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.web.domain.enums.SocialType.FACEBOOK;
 import static com.web.domain.enums.SocialType.*;
 
 @Component
@@ -45,10 +46,10 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
         HttpSession session = ((ServletRequestAttributes) RequestContextHolder.
                 currentRequestAttributes()).getRequest().getSession();
         User user = (User) session.getAttribute("user");
-        return getUser(user, session);
+        return getUser(user,session);
     }
 
-    private User getUser(User user, HttpSession session) {
+    private User getUser(User user,  HttpSession session) {
         if (user == null) {
             try {
                 OAuth2AuthenticationToken authentication = (OAuth2AuthenticationToken)
@@ -59,9 +60,7 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
 
                 user = userRepository.findByEmail(convertUser.getEmail());
 
-                if (user == null) {
-                    user = userRepository.save(convertUser);
-                }
+                if(user==null) {user = userRepository.save(convertUser); }
 
 
                 setRoleIfNotSame(user, authentication, map);
@@ -73,9 +72,10 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
     }
 
     private User convertUser(String authority, Map<String, Object> map) {
-        if (FACEBOOK.getValue().equals(authority)) return getModernUser(FACEBOOK, map);
-        else if (GOOGLE.getValue().equals(authority)) return getModernUser(GOOGLE, map);
-        else if (KAKAO.getValue().equals(authority)) return getKaKaoUser(map);
+        if(FACEBOOK.getValue().equals(authority)) return getModernUser(FACEBOOK, map);
+        else if(GOOGLE.getValue().equals(authority)) return getModernUser(GOOGLE, map);
+        else if(GITHUB.getValue().equals(authority)) return getModernUser(GITHUB, map);
+        else if(KAKAO.getValue().equals(authority)) return getKaKaoUser(map);
         return null;
     }
 
@@ -103,7 +103,7 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
 
     private void setRoleIfNotSame(User user, OAuth2AuthenticationToken authentication,
                                   Map<String, Object> map) {
-        if (!authentication.getAuthorities().contains(new SimpleGrantedAuthority(user.getSocialType().getRoleType()))) {
+        if(!authentication.getAuthorities().contains(new SimpleGrantedAuthority(user.getSocialType().getRoleType()))) {
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(map, "N/A", AuthorityUtils.createAuthorityList(user.getSocialType().getRoleType())));
         }
     }
